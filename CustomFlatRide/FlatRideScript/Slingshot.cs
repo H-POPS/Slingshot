@@ -15,7 +15,13 @@ public class Slingshot : FlatRide
     public float strenghtDown = 20;
     public float springVar = 1.5f;
    
-    
+    new void Start()
+    {
+        UpperRight.spring = 0;
+        UpperLeft.spring = 0;
+        Bottom.connectedBody.isKinematic = true;
+        getOut = true;
+    }
     public override void onStartRide()
     {
         getOut = false;
@@ -24,6 +30,7 @@ public class Slingshot : FlatRide
         {
             coll.convex = true;
         }
+
         StartCoroutine(Ride());
     }
     IEnumerator Ride()
