@@ -32,6 +32,8 @@ public class Slingshot : FlatRide
         }
 
         StartCoroutine(Ride());
+        
+        StartCoroutine(fix());
     }
     IEnumerator Ride()
     {
@@ -56,6 +58,17 @@ public class Slingshot : FlatRide
         yield return new WaitForSeconds(1);
         Bottom.connectedBody.isKinematic = true;
         getOut = true;
+        StopAllCoroutines();
+    }
+    IEnumerator fix()
+    {
+        yield return new WaitForSeconds(23);
+        UpperRight.spring = 0;
+        UpperLeft.spring = 0;
+        yield return new WaitForSeconds(1);
+        Bottom.connectedBody.isKinematic = true;
+        getOut = true;
+        StopAllCoroutines();
     }
     public override void tick(StationController stationController)
     {
