@@ -107,10 +107,11 @@ public class CustomFlatRideLoader : MonoBehaviour
         _sceneryObjects.Add(FlatRideScript);
         AssetManager.Instance.registerObject(FlatRideScript);
         FlatRideScript.fenceGO = AssetManager.Instance.rideFenceGO;
-        FlatRideScript.entranceGO = AssetManager.Instance.rideEntranceGO;
-        FlatRideScript.exitGO = AssetManager.Instance.rideExitGO;
+        FlatRideScript.entranceGO = AssetManager.Instance.attractionEntranceGO;
+        FlatRideScript.exitGO = AssetManager.Instance.attractionExitGO;
         FlatRideScript.entranceExitBuilderGO = AssetManager.Instance.flatRideEntranceExitBuilderGO;
         FlatRideScript.price = price;
+        FlatRideScript.categoryTag = "Attractions/Flat Ride";
         FlatRideScript.excitementRating = excitement;
         FlatRideScript.intensityRating = intensity;
         FlatRideScript.nauseaRating = nausea;
